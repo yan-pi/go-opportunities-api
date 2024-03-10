@@ -6,4 +6,5 @@ import (
 
 func main() {
 	router.Initialize()
+	println("Server is running on port 8080...")
 }
