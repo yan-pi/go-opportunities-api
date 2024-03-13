@@ -12,6 +12,12 @@ var (
 func main() {
 	logger = *config.GetLogger("main")
 	
+	err := config.Init()
+	if err != nil {
+		logger.Errorf("config init error: %v", err)
+		return
+	}
+	
 	router.Initialize()
 	println("Server is running on port 8080...")
 }
