@@ -3,10 +3,24 @@ package handler
 import (
 	"net/http"
 
-	"github.com/Yan-pi/go-opportunities-api/schemas"
 	"github.com/gin-gonic/gin"
+	"github.com/yan-pi/go-opportunities-api/schemas"
 )
 
+// @BasePath /api/v1
+
+// @Summary Update opening
+// @Description Update a job opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening Identification"
+// @Param opening body UpdateOpeningRequest true "Opening data to Update"
+// @Success 200 {object} UpdateOpeningResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [put]
 func UpdateOpeningHandler(ctx *gin.Context) {
 	request := UpdateOpeningRequest{}
 
