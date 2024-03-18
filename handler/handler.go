@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/Yan-pi/go-opportunities-api/config"
+	"github.com/yan-pi/go-opportunities-api/config"
 	"gorm.io/gorm"
 )
 
