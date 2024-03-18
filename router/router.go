@@ -2,7 +2,7 @@ package router
 
 import "github.com/gin-gonic/gin"
 
-func Initialize(){
+func Initialize() {
 	//Initialize gin router
 	r := gin.Default()
 
@@ -11,4 +11,3 @@ func Initialize(){
 
 	r.Run(":8080") // listen and serve on
 }
-

@@ -19,18 +19,20 @@ func CreateOpeningHandler(ctx *gin.Context) {
 	}
 
 	opening := schemas.Opening{
-		Role:     request.Role,
-		Company:  request.Company,
-		Location: request.Location,
-		Remote:   *request.Remote,
-		Link:     request.Link,
-		Salary:   request.Salary,
+		Role:        request.Role,
+		Description: request.Description,
+		Company:     request.Company,
+		Location:    request.Location,
+		Remote:      *request.Remote,
+		Link:        request.Link,
+		Salary:      request.Salary,
 	}
-	sendSuccess(ctx, "create-opening", opening);
-	
+
 	if err := db.Create(&opening).Error; err != nil {
 		logger.Errorf("error creating opening: %v", err.Error())
 		sendError(ctx, http.StatusInternalServerError, "error creating opening on database")
 		return
 	}
+
+	sendSuccess(ctx, "create-opening", opening)
 }
