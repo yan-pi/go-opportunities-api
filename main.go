@@ -1,23 +1,23 @@
 package main
 
 import (
-	"github.com/Yan-pi/go-opportunities-api/config"
-	"github.com/Yan-pi/go-opportunities-api/router"
+	"github.com/yan-pi/go-opportunities-api/config"
+	"github.com/yan-pi/go-opportunities-api/router"
 )
 
 var (
-	logger config.Logger
+	logger *config.Logger
 )
 
 func main() {
-	logger = *config.GetLogger("main")
-	
+	logger = config.GetLogger("main")
+
 	err := config.Init()
 	if err != nil {
 		logger.Errorf("config init error: %v", err)
 		return
 	}
-	
+
 	router.Initialize()
 	println("Server is running on port 8080...")
 }

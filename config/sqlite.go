@@ -3,7 +3,7 @@ package config
 import (
 	"os"
 
-	"github.com/Yan-pi/go-opportunities-api/schemas"
+	"github.com/yan-pi/go-opportunities-api/schemas"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -11,7 +11,7 @@ import (
 func InitializeSQLite() (*gorm.DB, error) {
 	logger := GetLogger("sqlite")
 	dbPath := "./db/main.db"
-	
+
 	// verifica se o db existe
 	_, err := os.Stat(dbPath)
 	if os.IsNotExist(err) {

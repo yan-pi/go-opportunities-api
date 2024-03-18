@@ -1,4 +1,4 @@
-module github.com/Yan-pi/go-opportunities-api
+module github.com/yan-pi/go-opportunities-api
 
 go 1.22.0
 
